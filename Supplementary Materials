@@ -2,6 +2,7 @@ Contents:
 
 1. Proof that L_{n+1} = F_{n+2} + F_n
 2. Derivation of the limit of the ratio of successive terms of the recursive sequences
+3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
 
 
 
@@ -29,3 +30,37 @@ Therefore lim(n to \inf) U_{n+1}/U_n = 1 + 1/L = L.
 L + 1 = L^2
 L^2 - L - 1 = 0
 L = [1 \plusminus sqrt(5)]/2 = \phi, \psi
+
+
+3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+
+W_1 = a, W_2 = b
+W_n is given by W_n-2 W_n-1
+A double-b is added to W_n if W_n-2 ends with b and W_n-1 begins with b.
+
+It can be shown that every word for n >= 2 ends with b.
+Proof: W_2 = b ends with b.
+Assume W_k (k >= 2) ends with b.
+W_k+1 = W_k-1 W_k.
+As W_k ends with b and W_k+1 ends with W_k, W_k+1 ends with b.
+Therefore by induction every W_K (k >= 2) ends with b.
+
+It can also be shown that every even-nmbered word begins with b.
+Proof: W_2 = b begins with b.
+Assume W_k (k even) begins with b.
+W_k+2 = W_k W_k+1.
+As W_k+2 begins with W_k and W_k begins with b, W_k+2 begins with b.
+Therefore by induction every even-numbered word begins with b.
+
+Similarly, every odd-nmbered word begins with a.
+Proof: W_1 = a begins with a.
+Assume W_k (k odd) begins with a.
+W_k+2 = W_k W_k+1.
+As W_k+2 begins with W_k and W_k begins with a, W_k+2 begins with a.
+Therefore by induction every odd-numbered word begins with a.
+
+Combining the above, a double-b is added if W_n-2 ends with b and W_n-1 begins with b.
+That is, (n-2) >= 2 and (n-1) is even.
+Therefore n >= 4, n is odd
+Every odd n beginning with 5 adds a double-b
+Therefore, the number of double-bs = floor[(n-3)/5] for n >= 5

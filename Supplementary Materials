@@ -1,8 +1,7 @@
 Contents:
 
 1. Proof that L_{n+1} = F_{n+2} + F_n
-2. Derivation of the limit of the ratio of successive terms of the recursive sequences
-3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+2. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
 
 
 
@@ -18,21 +17,8 @@ sqrt(5)*([1 + sqrt(5)]/2)*phi^n + sqrt(5)*([1 - sqrt(5)]/2)*psi^n = ([3 + sqrt(5
 Hence L_{n+1} = F_{n+2} + F_n
 
 
-2. Derivation of the limit of  the ratio of successive terms of the recursive sequences
 
-Consider a sequence given by the recurrence relation U_n = U_{n-1} + U_{n-2}.
-Let lim(n to \inf) U_n/U_{n-1} = L.
-This is equivalent to lim(n to \inf) U_{n+1}/U_{n} = L.
-U_{n+1} = U_n + U_{n-1}
-Therefore lim(n to \inf)[U_n + U_{n-1}/U_n = L.
-lim(n to \inf) U_n/U_n = 1 and lim(n to \inf) U_{n-1}/U_n = lim(n to \inf) [U_n/U_{n-1}] = 1/L.
-Therefore lim(n to \inf) U_{n+1}/U_n = 1 + 1/L = L.
-L + 1 = L^2
-L^2 - L - 1 = 0
-L = [1 \plusminus sqrt(5)]/2 = \phi, \psi
-
-
-3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+2. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
 
 W_1 = a, W_2 = b
 W_n is given by W_n-2 W_n-1

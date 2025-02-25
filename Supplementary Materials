@@ -1,11 +1,29 @@
 Contents:
 
-1. Proof that L_{n+1} = F_{n+2} + F_n
-2. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+1. Derivation of the generalised Binet's formula
+2. Proof that L_{n+1} = F_{n+2} + F_n
+3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
 
 
 
-1. Proof that L_{n+1} = F_{n+2} + F_n
+1. Derivation of the generalised Binet's formula
+
+Consider a generalised sequence x_{n+2} = x_n + x_{n+1}.
+As seen in a reference on the main report, we know x_n = a(phi^n) + b(psi^n) for some a, b
+Let x_0, x_1 be arbitrary
+We have x_0 = a + b, x_1 = a(phi) + b(psi)
+b = x_0 - a
+Subsitute this into the equation for x_1
+x_1 = a(phi) + (x_0 - a)psi = a(phi) + x_0(psi) - a(psi)
+a(phi) - a(psi) = x_1 - x_0(psi)
+a = [x_1 - x_0(psi)]/[phi - psi]
+a = [x_1 - x_0(psi)]/sqrt(5)
+b = x_0 - [x_1 - x_0(psi)]/sqrt(5)
+Therefore x_n = {[x_1 - x_0(psi)]/sqrt(5)}phi + {x_0 - [x_1 - x_0(psi)]/sqrt(5)}psi
+
+
+
+2. Proof that L_{n+1} = F_{n+2} + F_n
 
 Let [1 + sqrt(5)]/2 = phi and [1 - sqrt(5)]/2 = psi
 phi^{n+1} + psi^{n+1} = [phi^{n+2}]/sqrt(5) - [psi^{n+2}]/sqrt(5) + [phi^n]/sqrt(5) - [psi^n]/sqrt(5)
@@ -18,7 +36,7 @@ Hence L_{n+1} = F_{n+2} + F_n
 
 
 
-2. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
 
 W_1 = a, W_2 = b
 W_n is given by W_n-2 W_n-1

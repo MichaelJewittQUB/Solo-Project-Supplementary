@@ -2,7 +2,8 @@ Contents:
 
 1. Derivation of the generalised Binet's formula
 2. Proof that L_{n+1} = F_{n+2} + F_n
-3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+3. Code to find Fibonacci sums of two Lucas numbers
+4. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
 
 
 
@@ -35,8 +36,62 @@ sqrt(5)*([1 + sqrt(5)]/2)*phi^n + sqrt(5)*([1 - sqrt(5)]/2)*psi^n = ([3 + sqrt(5
 Hence L_{n+1} = F_{n+2} + F_n
 
 
+3. Code to find Fibonacci sums of two Lucas numbers
 
-3. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+f1 = 1
+f2 = 1
+l1 = 1
+l2 = 3
+fib = [f1, f2] #Fibonacci numbers
+luc = [l1, l2] #Lucas numbers
+
+a = f1
+b = f2
+for i in range (1, 29): #generates F_3 to F_30
+  c = a + b #Calculates F_n
+  fib.append(c) #and adds it to the array
+  a = b
+  b = c #sets new F_n-1, F_n-2
+
+d = l1
+e = l2
+for i in range (1, 29): #generates L_3 to L_30
+  f = d + e
+  luc.append(f)
+  d = e
+  e = f
+
+lucarray1 = []
+lucarray2 = []
+fibarray = []
+for i in range(0, 30):
+  for j in range(0, 30):
+    sum = luc[i] + luc[j] #adds every combination of two Lucas numbers
+    for k in range(0, 30):
+      if fib[k] == sum: #checks every Fibonacci number to see if it fits L_i + L_j
+        lucarray1.append(i+1) #records every combination that works (recording the index n)
+        lucarray2.append(j+1)
+        fibarray.append(k+1)
+      else:
+        continue
+
+print(lucarray1) #prints all working combinations to be checked manually
+print(lucarray2)
+print(fibarray)
+
+This Python code generates the first 30 terms of the Fibonacci and Lucas sequences
+It then adds all possible pairs of Lucas numbers together
+If the pair sums to a Fibonacci number, the index n of all numbers are recorded
+The full lists of indexes that satisfy F_n = L_a + L_b are as follows:
+Lucas (1): [1, 1, 1, 2, 3, 3, 4, 6]
+Lucas (2): [1, 3, 4, 6, 1, 3, 1, 2]
+Fibonacci: [3, 5, 6, 8, 5, 6, 6, 8]
+That is, L_1 + L_1 = F_3, L_1 + L_3 = F_5 etc.
+There exists no sequence that generates F_n for n = 1, 2, 4, 7, or any 9 <= n <= 30
+
+
+
+4. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
 
 W_1 = a, W_2 = b
 W_n is given by W_n-2 W_n-1

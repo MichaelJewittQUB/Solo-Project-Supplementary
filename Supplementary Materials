@@ -3,7 +3,7 @@ Contents:
 1. Derivation of the generalised Binet's formula
 2. Proof that L_{n+1} = F_{n+2} + F_n
 3. Code to find Fibonacci sums of two Lucas numbers
-4. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+4. Proof of the number of double-bs in a "word"
 
 
 

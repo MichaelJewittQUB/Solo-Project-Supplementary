@@ -91,7 +91,7 @@ There exists no sequence that generates F_n for n = 1, 2, 4, 7, or any 9 <= n <=
 
 
 
-4. Proof that the number of double-bs in a "word" is floor[(n-3)/5] for n >= 5
+4. Proof of the number of double-b's in a "word"
 
 W_1 = a, W_2 = b
 W_n is given by W_n-2 W_n-1
@@ -121,5 +121,23 @@ Therefore by induction every odd-numbered word begins with a.
 Combining the above, a double-b is added if W_n-2 ends with b and W_n-1 begins with b.
 That is, (n-2) >= 2 and (n-1) is even.
 Therefore n >= 4, n is odd
-Every odd n beginning with 5 adds a double-b
-Therefore, the number of double-bs = floor[(n-3)/5] for n >= 5
+Every odd n beginning with 5 adds a double-b on top of those in the previous two words
+N_k = N_{k-1} + N_{k-2} + mod 2 for k >= 7, with N_5 = N_6 = 1
+
+For the Lucas numbers, W_1 = a, W_2 = bbb
+It can be shown (by the same method as above) that every word with n >= 2 ends with bbb, every even word begins with bbb and every odd word begins with a.
+
+If we define a double-b as two consecutive b's, then an n-b (n consecutive b's) contains n-1 double-b's (n >= 1)
+Proof: A single-b contains no double-b's
+Assume a k-b contains k-1 double-b's
+(k+1)-b = (k-b)b
+The new b added forms another double-b with the last b of the k-b
+The other b's are unaffected, as they are not consecutive with the new b
+Therefore the (k+1)-b has (k-1) + 1 = k = (k+1) - 1 b's
+Therefore, by induction, an n-b has (n-1) double-b's
+
+Every odd n combines two 3-b's to form a 6-b
+The two 3-b's have 2 double-b's each, for 4 total
+The 6-b has 5 double-b's
+Therefore, each odd n adds one double-b on top of those in the two previous words
+Therefore, N_k = N_{k-1} + N_{k-2} + mod 2 for k >= 4, N_2 = N_3 = 2

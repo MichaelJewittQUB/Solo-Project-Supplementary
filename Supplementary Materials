@@ -122,7 +122,7 @@ Combining the above, a double-b is added if W_n-2 ends with b and W_n-1 begins w
 That is, (n-2) >= 2 and (n-1) is even.
 Therefore n >= 4, n is odd
 Every odd n beginning with 5 adds a double-b on top of those in the previous two words
-N_k = N_{k-1} + N_{k-2} + mod 2 for k >= 7, with N_5 = N_6 = 1
+N_k = N_{k-1} + N_{k-2} + n mod 2 for k >= 7, with N_5 = N_6 = 1
 
 For the Lucas numbers, W_1 = a, W_2 = bbb
 It can be shown (by the same method as above) that every word with n >= 2 ends with bbb, every even word begins with bbb and every odd word begins with a.
@@ -140,4 +140,12 @@ Every odd n combines two 3-b's to form a 6-b
 The two 3-b's have 2 double-b's each, for 4 total
 The 6-b has 5 double-b's
 Therefore, each odd n adds one double-b on top of those in the two previous words
-Therefore, N_k = N_{k-1} + N_{k-2} + mod 2 for k >= 4, N_2 = N_3 = 2
+Therefore, N_k = N_{k-1} + N_{k-2} + n mod 2 for k >= 4, N_2 = N_3 = 2
+
+Now consider a sequence of arbitrary non-zero x_1 and x_2 > 1
+Again, every  every word with n >= 2 ends with an n-b, every even word begins with an n-b and every odd word begins with an n-a.
+Every odd n combines two n-b's to form a 2n-b
+The two n-b's have n-1 double-b's each, for 2n - 2 double-b's total
+The 2n-b has 2n - 1 double-b's
+Therefore, each odd n adds a double-b on top of preexisting ones
+N_k = N{k-1} + N_{k-2} + n mod 2 for k >= 4, N_2 = N_3 = x_2 - 1

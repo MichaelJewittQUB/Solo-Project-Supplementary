@@ -14,13 +14,15 @@ As seen in a reference on the main report, we know x_n = a(phi^n) + b(psi^n) for
 Let x_0, x_1 be arbitrary
 We have x_0 = a + b, x_1 = a(phi) + b(psi)
 b = x_0 - a
-Subsitute this into the equation for x_1
+Substitute this into the equation for x_1
 x_1 = a(phi) + (x_0 - a)psi = a(phi) + x_0(psi) - a(psi)
 a(phi) - a(psi) = x_1 - x_0(psi)
 a = [x_1 - x_0(psi)]/[phi - psi]
 a = [x_1 - x_0(psi)]/sqrt(5)
 b = x_0 - [x_1 - x_0(psi)]/sqrt(5)
 Therefore x_n = {[x_1 - x_0(psi)]/sqrt(5)}phi + {x_0 - [x_1 - x_0(psi)]/sqrt(5)}psi
+
+The Lucas numbers are derived from this for x_0 = 2, x_1 = 1
 
 
 
